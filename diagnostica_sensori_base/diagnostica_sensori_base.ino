@@ -7,6 +7,9 @@ public:
   int stat; //stato corrente del sensore
   int prev_stat; //ultimo stato del sensore
   int lastActivationTime; //millis in cui stat è diventato true
+  sensore(int pinNum) {
+    pin = pinNum;
+  }
   void set() { //imposta il pin come imput e setta prev_stat
     pinMode(pin, INPUT);
     prev_stat = false;
@@ -36,7 +39,7 @@ public:
 
     }
   }
-  sensore(int pin);
+
   long currentM = millis();
 };
 //creazione delle istanze
