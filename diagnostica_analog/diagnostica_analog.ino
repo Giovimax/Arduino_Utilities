@@ -2,14 +2,14 @@
 
 void setup() {
 Serial.begin(9600);
-pinMode(2,INPUT);
+pinMode(A0,INPUT);
 pinMode(13,OUTPUT);
 }
 
 void loop() {
-  int s0 = digitalRead(2);
+  int s0 = analogRead(A0);
   Serial.println(s0);//prints the result
-  if (s0 == true) {
+  if (s0 >= 512) {
     digitalWrite(13, HIGH);
   }
   else {
